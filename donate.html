@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - MPGM Church</title>
+    <link rel="icon" href="images/LOGO_footer.png" type="image/png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/LOGO.png" alt="MPGM Logo">
+          
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="donate.html" class="nav-link donate-btn active">Donate</a></li>
+                
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="donate-hero">
+        <div class="container">
+            <h1 class="animate-fadeInDown">Support Our Ministry</h1>
+            <p class="animate-fadeInUp delay-1">Your generosity helps us spread the Gospel and serve our community</p>
+        </div>
+    </section>
+
+    <section class="donation-options">
+        <div class="container">
+            <div class="donation-tabs">
+                <button class="tab-btn active" data-tab="one-time">One-Time Donation</button>
+                <button class="tab-btn" data-tab="monthly">Monthly Giving</button>
+            </div>
+
+            <div class="tab-content active" id="one-time">
+                <div class="donation-grid">
+                    <div class="donation-card">
+                        <h3>R100</h3>
+                        <p>Helps provide a food parcel for a family in need</p>
+                        <button class="btn-donate" data-amount="100">Donate Now</button>
+                    </div>
+                    
+                    <div class="donation-card highlighted">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>R500</h3>
+                        <p>Supports our youth programs and activities</p>
+                        <button class="btn-donate" data-amount="500">Donate Now</button>
+                    </div>
+                    
+                    <div class="donation-card">
+                        <h3>R1000</h3>
+                        <p>Funds community outreach initiatives</p>
+                        <button class="btn-donate" data-amount="1000">Donate Now</button>
+                    </div>
+                    
+                    <div class="donation-card custom-amount">
+                        <h3>Custom Amount</h3>
+                        <div class="input-group">
+                            <span>R</span>
+                            <input type="number" id="custom-amount" placeholder="Enter amount">
+                        </div>
+                        <button class="btn-donate" id="btn-custom-donate">Donate Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="monthly">
+                <div class="donation-grid">
+                    <div class="donation-card">
+                        <h3>R200/month</h3>
+                        <p>Consistent support for our feeding scheme</p>
+                        <button class="btn-donate" data-amount="200" data-recurring="true">Subscribe</button>
+                    </div>
+                    
+                    <div class="donation-card highlighted">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>R500/month</h3>
+                        <p>Sustains our community education programs</p>
+                        <button class="btn-donate" data-amount="500" data-recurring="true">Subscribe</button>
+                    </div>
+                    
+                    <div class="donation-card">
+                        <h3>R1000/month</h3>
+                        <p>Significant impact on our ministry's growth</p>
+                        <button class="btn-donate" data-amount="1000" data-recurring="true">Subscribe</button>
+                    </div>
+                    
+                    <div class="donation-card custom-amount">
+                        <h3>Custom Amount</h3>
+                        <div class="input-group">
+                            <span>R</span>
+                            <input type="number" id="custom-monthly-amount" placeholder="Enter amount">
+                        </div>
+                        <button class="btn-donate" id="btn-custom-monthly">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="donation-impact">
+        <div class="container">
+            <h2 class="section-title">Your Donation Makes an Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Feeding Programs</h3>
+                    <p>We provide meals to over 200 families each month through your generous donations.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Education Support</h3>
+                    <p>Your gifts help us supply school uniforms and stationery to children in need.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Shelter Assistance</h3>
+                    <p>We help repair homes and provide temporary shelter for those in crisis situations.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community Outreach</h3>
+                    <p>Your support enables us to organize medical camps and skills development workshops.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="donation-form-section">
+    <div class="container">
+        <div class="donation-form-container">
+            <div class="form-header">
+                <h2>Complete Your Donation</h2>
+                <div class="donation-summary">
+                    <span id="donation-amount-display">R0.00</span>
+                    <span id="donation-type-display">One-Time</span>
+                </div>
+            </div>
+            
+            <form id="donation-form" class="donation-form">
+                <div class="form-group">
+                    <label for="donor-name">Full Name *</label>
+                    <input type="text" id="donor-name" required>
+                    <span class="error-message" id="donor-name-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="donor-email">Email Address *</label>
+                    <input type="email" id="donor-email" required>
+                    <span class="error-message" id="donor-email-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="donor-phone">Phone Number</label>
+                    <input type="tel" id="donor-phone">
+                    <span class="error-message" id="donor-phone-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Donation Visibility</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="visibility" value="public" checked>
+                            <span>Public Donation (Name will be displayed)</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="visibility" value="anonymous">
+                            <span>Anonymous Donation</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="donation-message">Message (Optional)</label>
+                    <textarea id="donation-message" rows="3" placeholder="Add a personal message with your donation..."></textarea>
+                </div>
+                
+                <div class="payment-method">
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <div class="payment-option active" data-method="card">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Credit/Debit Card</span>
+                        </div>
+                        <div class="payment-option" data-method="bank">
+                            <i class="fas fa-university"></i>
+                            <span>Bank Transfer</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Payment Form -->
+                    <div id="card-form" class="payment-form" style="display: block;">
+                        <div class="card-details">
+                            <div class="form-group">
+                                <label for="card-name">Name on Card *</label>
+                                <input type="text" id="card-name" placeholder="John Doe">
+                                <span class="error-message" id="card-name-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="card-number">Card Number *</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                                <span class="error-message" id="card-number-error"></span>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-expiry">Expiry Date *</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                                    <span class="error-message" id="card-expiry-error"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="card-cvc">CVC *</label>
+                                    <input type="text" id="card-cvc" placeholder="123" maxlength="4">
+                                    <span class="error-message" id="card-cvc-error"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="card-security">
+                                <i class="fas fa-lock"></i>
+                                <span>Your payment information is secure and encrypted</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bank Transfer Form -->
+                    <div id="bank-form" class="payment-form" style="display: none;">
+                        <div class="bank-details">
+                            <div class="bank-details-card">
+                                <h4><i class="fas fa-university"></i> Bank Transfer Details</h4>
+                                <div class="bank-info">
+                                    <div class="bank-detail">
+                                        <strong>Bank Name:</strong>
+                                        <span>Standard Bank</span>
+                                    </div>
+                                    <div class="bank-detail">
+                                        <strong>Account Name:</strong>
+                                        <span>MPGM Church</span>
+                                    </div>
+                                    <div class="bank-detail">
+                                        <strong>Account Number:</strong>
+                                        <span>1234567890</span>
+                                    </div>
+                                    <div class="bank-detail">
+                                        <strong>Branch Code:</strong>
+                                        <span>012345</span>
+                                    </div>
+                                    <div class="bank-detail">
+                                        <strong>Reference:</strong>
+                                        <span>Your Name + "Donation"</span>
+                                    </div>
+                                </div>
+                                <div class="transfer-note">
+                                    <p><i class="fas fa-info-circle"></i> <strong>Important:</strong> Please use your name + "Donation" as the reference when making the transfer. Your donation will be recorded once we confirm the transaction.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="donation-confirmation">
+                    <div class="confirmation-summary">
+                        <h4>Donation Summary</h4>
+                        <div class="summary-details">
+                            <div class="summary-item">
+                                <span>Amount:</span>
+                                <span id="donation-amount-final">R0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Type:</span>
+                                <span id="summary-type">One-Time</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Payment Method:</span>
+                                <span id="summary-method">Credit/Debit Card</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-footer">
+                    <div class="form-agreement">
+                        <input type="checkbox" id="donation-agreement" required>
+                        <label for="donation-agreement">I agree to the <a href="terms.html">Terms & Conditions</a> and authorize this transaction</label>
+                        <span class="error-message" id="agreement-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit-donation">
+                        <span id="submit-text">Complete Donation</span>
+                        <span id="submit-amount">R0.00</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <section class="financial-transparency">
+        <div class="container">
+            <h2 class="section-title">Financial Transparency</h2>
+            <p>We are committed to being good stewards of the resources entrusted to us. Here's how donations were used last quarter:</p>
+            
+            <div class="transparency-chart">
+                <div class="chart-bar" style="--percent: 70%; --color: #4a6fdc;">
+                    <div class="chart-label">Community Programs</div>
+                    <div class="chart-value">70%</div>
+                </div>
+                
+                <div class="chart-bar" style="--percent: 15%; --color: #3a5bc7;">
+                    <div class="chart-label">Facility Maintenance</div>
+                    <div class="chart-value">15%</div>
+                </div>
+                
+                <div class="chart-bar" style="--percent: 10%; --color: #ff6b6b;">
+                    <div class="chart-label">Staff Support</div>
+                    <div class="chart-value">10%</div>
+                </div>
+                
+                <div class="chart-bar" style="--percent: 5%; --color: #28a745;">
+                    <div class="chart-label">Administration</div>
+                    <div class="chart-value">5%</div>
+                </div>
+            </div>
+            
+            <div class="transparency-download">
+                <a href="financial-report.pdf" class="btn-transparent" download>
+                    <i class="fas fa-file-pdf"></i> Download Full Financial Report
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <div class="footer-logo">
+                    <img src="images/LOGO_footer.png" alt="MPGM Logo">
+                    <h3>MPGM Church</h3>
+                </div>
+                <p>Manifesting the Power of God Ministries in Nellmapius since 2014. Join us as we serve our community and spread the word of God.</p>
+                <div class="contact">
+                       <span> <a href="tel:+27725905697" style="color: white;">
+    <i class="fas fa-phone"></i> +27 72 590 5697 </a></span>
+
+<span><a href="mailto:mpgminfo@gmail.com" style="color: white;">
+    <i class="fas fa-envelope"></i> mpgminfo@gmail.com </a></span>
+
+<span><a href="https://www.google.com/maps/search/?api=1&query=Manifesting+The+Power+Of+God+Ministries" target="_blank"style="color: white;">
+    <i class="fas fa-map-marker-alt"></i> Nellmapius, Extension 24, Phaphadikota street </a></span>
+                </div>
+            </div>
+            
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100077282955124"><i class="fab fa-facebook-f"></i></a>
+                   
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/27725905697"><i class="fab fa-whatsapp"></i></a>
+                   
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <h3>Service Times</h3>
+                <p>Sunday: 9:00 AM - 12:00 PM</p>
+                <p>Wednesday: 6:00 PM - 8:00 PM</p>
+                <p>Friday Prayer: 6:00 PM - 7:00 PM</p>
+            </div>
+             <a href="admin/html/index.html">Sign up/ sign in</a></p>  
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 MPGM Church. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/donate.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPGM Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin.css"/>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/LOGO.png" alt="MPGM Logo" class="sidebar-logo">
+                <h2>MPGM Admin</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active" data-section="dashboard">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li data-section="registrations">
+                        <i class="fas fa-users"></i>
+                        <span>Registrations</span>
+                    </li>
+                    <li data-section="rsvps">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Event RSVPs</span>
+                    </li>
+                    <li data-section="messages">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact Messages</span>
+                    </li>
+                    <li data-section="donations">
+                        <i class="fas fa-donate"></i>
+                        <span>Donations</span>
+                    </li>
+                    <li data-section="events">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Manage Events</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1 id="content-title">Dashboard Overview</h1>
+                <div class="user-info">
+                    <span id="adminName">Admin User</span>
+                    <div class="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard Overview -->
+            <section id="dashboard-section" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Registrations</h3>
+                            <p id="registrations-count">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>RSVPs</h3>
+                            <p id="rsvps-count">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Messages</h3>
+                            <p id="messages-count">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-donate"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Donations</h3>
+                            <p id="donations-count">0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list" id="recent-activity">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Registrations Section -->
+            <section id="registrations-section" class="content-section">
+                <div class="section-header">
+                    <h2>User Registrations</h2>
+                    <div class="section-actions">
+                        <button class="btn-export" id="export-registrations">
+                            <i class="fas fa-file-export"></i> Export
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table id="registrations-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Interests</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- RSVPs Section -->
+            <section id="rsvps-section" class="content-section">
+                <div class="section-header">
+                    <h2>Event RSVPs</h2>
+                    <div class="section-actions">
+                        <button class="btn-export" id="export-rsvps">
+                            <i class="fas fa-file-export"></i> Export
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table id="rsvps-table">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Guests</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Messages Section -->
+            <section id="messages-section" class="content-section">
+                <div class="section-header">
+                    <h2>Contact Messages</h2>
+                    <div class="section-actions">
+                        <button class="btn-export" id="export-messages">
+                            <i class="fas fa-file-export"></i> Export
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table id="messages-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Donations Section -->
+            <section id="donations-section" class="content-section">
+                <div class="section-header">
+                    <h2>Donations</h2>
+                    <div class="section-actions">
+                        <button class="btn-export" id="export-donations">
+                            <i class="fas fa-file-export"></i> Export
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table id="donations-table">
+                        <thead>
+                            <tr>
+                                <th>Donor</th>
+                                <th>Amount</th>
+                                <th>Type</th>
+                                <th>Method</th>
+                                <th>Date</th>
+                                <th>Visibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="donation-summary">
+                    <div class="summary-card">
+                        <h3>Total Donations</h3>
+                        <p id="total-donations">R0.00</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>One-Time Donations</h3>
+                        <p id="one-time-donations">R0.00</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Monthly Donations</h3>
+                        <p id="monthly-donations">R0.00</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Events Section -->
+            <section id="events-section" class="content-section">
+                <div class="section-header">
+                    <h2>Manage Events</h2>
+                    <div class="section-actions">
+                        <button class="btn-primary" id="add-event-btn">
+                            <i class="fas fa-plus"></i> Add Event
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="events-list" id="events-list">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Add New Event</h2>
+            
+            <form id="event-form">
+                <input type="hidden" id="event-id">
+                
+                <div class="form-group">
+                    <label for="event-title">Event Title</label>
+                    <input type="text" id="event-title" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-date">Date</label>
+                        <input type="date" id="event-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-time">Time</label>
+                        <input type="time" id="event-time" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-location">Location</label>
+                    <input type="text" id="event-location" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-category">Category</label>
+                    <select id="event-category" required>
+                        <option value="worship">Worship</option>
+                        <option value="outreach">Outreach</option>
+                        <option value="youth">Youth</option>
+                        <option value="conference">Conference</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-description">Description</label>
+                    <textarea id="event-description" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Save Event</button>
+                    <button type="button" class="btn-secondary" id="cancel-event">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

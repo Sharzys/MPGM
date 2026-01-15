@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MPGM Church</title>
+     <link rel="icon" href="images/icon.png" type="image/png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="logo">
+             <img src="images/LOGO.png" alt="MPGM Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="donate.html" class="nav-link donate-btn">Donate</a></li>
+                
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+ <br>
+ <br>
+ <br>
+
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Our Location</h3>
+                            <p>123 Church Street, Nellmapius<br>Pretoria, South Africa</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone Number</h3>
+                            <p>+27 12 345 6789</p>
+                            <p>Monday-Friday: 9am-5pm</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Address</h3>
+                            <p>info@mpgmchurch.org.za</p>
+                            <p>Prayer requests: prayer@mpgmchurch.org.za</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Service Times</h3>
+                            <p>Sunday: 9:00 AM - 12:00 PM</p>
+                            <p>Wednesday: 6:00 PM - 8:00 PM</p>
+                            <p>Friday Prayer: 6:00 PM - 7:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/27123456789"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                            <span class="error-message" id="phone-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="prayer">Prayer Request</option>
+                                <option value="question">General Question</option>
+                                <option value="membership">Membership Inquiry</option>
+                                <option value="event">Event Information</m>
+                                <option value="donation">Donation Question</option>
+                                <option value="Volunteer">Volunteer</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="subject-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+
+                        <div class="form-footer">
+                            <button type="submit" class="btn-submit">
+                                <span id="submit-text">Send Message</span>
+                                <i class="fas fa-paper-plane" id="submit-icon"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="map-container">
+                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1432.8852281288817!2d28.3874209!3d-25.7310709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e955f0051b92ca3%3A0x7b7577c689d84f96!2sManifesting%20The%20Power%20Of%20God%20Ministries!5e0!3m2!1sen!2sza!4v1718804044583!5m2!1sen!2sza" 
+                         width="100%" 
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-cta">
+        <div class="container">
+            <h2>Become Part of Our Family</h2>
+            <p>We'd love for you to join us on this journey of faith and service.</p>
+            <div class="cta-buttons">
+                <a href="register.html" class="btn-primary">Join Our Church</a>
+            
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <div class="footer-logo">
+                    <img src="images/LOGO_footer.png" alt="MPGM Logo">
+                    <h3>MPGM Church</h3>
+                </div>
+                <p>Manifesting the Power of God Ministries in Nellmapius since 2014. Join us as we serve our community and spread the word of God.</p>
+                <div class="contact">
+                  
+        <span> <a href="tel:+27725905697" style="color: white;">
+    <i class="fas fa-phone"></i> +27 72 590 5697 </a></span>
+
+<span><a href="mailto:mpgminfo@gmail.com" style="color: white;">
+    <i class="fas fa-envelope"></i> mpgminfo@gmail.com </a></span>
+
+<span><a href="https://www.google.com/maps/search/?api=1&query=Manifesting+The+Power+Of+God+Ministries" target="_blank"style="color: white;">
+    <i class="fas fa-map-marker-alt"></i> Nellmapius, Extension 24, Phaphadikota street </a></span>
+
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100077282955124"><i class="fab fa-facebook-f"></i></a>
+                   
+                    <a href="https://www.tiktok.com/@9866543twm"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/27725905697"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <h3>Service Times</h3>
+                <p>Sunday: 9:00 AM - 12:00 PM</p>
+                <p>Wednesday: 6:00 PM - 8:00 PM</p>
+                <p>Friday Prayer: 6:00 PM - 7:00 PM</p>
+            </div>
+            <div>
+             <a href="admin/html/index.html">Sign up/ sign in</a></p>  
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2023 MPGM Church. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - MPGM Church</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+     <link rel="icon" href="images/LOGO_footer.png" type="image/png">
+
+</head>
+<body>
+     <header>
+        <div class="logo">
+             <img src="images/LOGO.png" alt="MPGM Logo">
+        
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About Us</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="donate.html" class="nav-link donate-btn">Donate</a></li>
+               
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="gallery-hero">
+        <div class="container">
+            <h1 class="animate-fadeInDown">Our Gallery</h1>
+            <p class="animate-fadeInUp delay-1">Capturing moments of worship, fellowship, and service</p>
+        </div>
+    </section>
+
+    <section class="gallery-main">
+        <div class="container">
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="worship">Worship</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+                <button class="filter-btn" data-filter="youth">Youth</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item worship" data-category="worship">
+                    <img src="images/IMG_0647.JPG" alt="Sunday Service">
+                    <div class="gallery-overlay">
+                        <h3>Sunday Service</h3>
+                        <p>Powerful worship at our weekly service</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/worship1.jpg', 'Sunday Service','sunday_service')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item events" data-category="events">
+                    <img src="images/christmas.jpg" alt="Christmas Celebration">
+                    <div class="gallery-overlay">
+                        <h3>Christmas Celebration</h3>
+                        <p>Our annual Christmas service</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/event1.jpg', 'Christmas Celebration')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item community" data-category="community">
+                    <img src="images/food_parcels.jpg" alt="Food Distribution">
+                    <div class="gallery-overlay">
+                        <h3>Food Distribution</h3>
+                        <p>Monthly food parcel program</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/community1.jpg', 'Food Distribution','food_parcels')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="imageModal" class="gallery-modal">
+    <span class="close" onclick="closeModal()" style="position: absolute; top: 15px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 1001;">&times;</span>
+    <img class="gallery-modal-content" id="modalImg">
+    <div id="modalCaption"></div>
+
+    <button class="gallery-modal-nav left" onclick="prevImage()">&#10094;</button>
+    <button class="gallery-modal-nav right" onclick="nextImage()">&#10095;</button>
+</div>
+
+                
+                <div class="gallery-item youth" data-category="youth">
+                    <img src="images/IMG_1565.JPG" alt="Youth Camp">
+                    <div class="gallery-overlay">
+                        <h3>Vintage</h3>
+                        <p>Annual youth retreat</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/youth1.jpg', 'Youth Camp','vintage')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item worship" data-category="worship">
+                    <img src="images/babtism.jpg" alt="Baptism Service">
+                    <div class="gallery-overlay">
+                        <h3>Baptism Service & thanks Giving</h3>
+                        <p>New believers baptized & pastor's appreciation</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/worship2.jpg', 'Baptism Service')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item events" data-category="events">
+                    <img src="images/seminar.jpg" alt="New Year's Service">
+                    <div class="gallery-overlay">
+                        <h3>Seminar</h3>
+                        <p>The bauty of marriage and singleness</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/event2.jpg', 'New Year\'s Service','seminar')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item community" data-category="community">
+                    <img src="images/School.JPG" alt="School Supplies Drive">
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Drive</h3>
+                        <p>Preparing children for school</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/community2.jpg', 'School Supplies Drive')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item youth" data-category="youth">
+                    <img src="images/bible_study.jpg" alt="Bible Study">
+                    <div class="gallery-overlay">
+                        <h3>Bible Study</h3>
+                        <p>Weekly youth gathering</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/youth2.jpg', 'Youth Bible Study')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item worship" data-category="worship">
+                    <img src="images/prayer.jpg" alt="Prayer Meeting">
+                    <div class="gallery-overlay">
+                        <h3>Lofdal Fasting and prayer</h3>
+                        <p>prayer weekend</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/worship3.jpg', 'Prayer Meeting','Lofdal')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item events" data-category="events">
+                    <img src="images/birthday.jpg" alt="Women's Conference">
+                    <div class="gallery-overlay">
+                        <h3>Bishop's Birthday celebration</h3>
+                        <p>spiritual and physical grown within our leader</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/event3.jpg', 'Women\'s Conference','Birthday')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item community" data-category="community">
+                    <img src="images/workshop.jpg" alt="Skills Workshop">
+                    <div class="gallery-overlay">
+                        <h3>Skills Workshop</h3>
+                        <p>Teaching practical skills</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/community3.jpg', 'Skills Workshop')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gallery-item youth" data-category="youth">
+                    <img src="images/youth.jpg" alt="Youth Outreach">
+                    <div class="gallery-overlay">
+                        <h3>Youth Outreach</h3>
+                        <p>Engaging local youth</p>
+                        <button class="btn-view" onclick="openModal('images/gallery/youth3.jpg', 'Youth Outreach','youth_colorRun',)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="gallery-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div class="modal-caption" id="modal-caption"></div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <div class="footer-logo">
+                    <img src="images/LOGO_footer.png" alt="MPGM Logo">
+                    <h3>MPGM Church</h3>
+                </div>
+                <p>Manifesting the Power of God Ministries in Nellmapius since 2014. Join us as we serve our community and spread the word of God.</p>
+                <div class="contact">
+                     <span> <a href="tel:+27725905697" style="color: white;">
+    <i class="fas fa-phone"></i> +27 72 590 5697 </a></span>
+
+<span><a href="mailto:mpgminfo@gmail.com" style="color: white;">
+    <i class="fas fa-envelope"></i> mpgminfo@gmail.com </a></span>
+
+<span><a href="https://www.google.com/maps/search/?api=1&query=Manifesting+The+Power+Of+God+Ministries" target="_blank"style="color: white;">
+    <i class="fas fa-map-marker-alt"></i> Nellmapius, Extension 24, Phaphadikota street </a></span>
+                </div>
+            </div>
+            
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                     <a href="https://www.facebook.com/profile.php?id=100077282955124"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/27725905697"><i class="fab fa-whatsapp"></i></a>
+                   
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <h3>Service Times</h3>
+                <p>Sunday: 9:00 AM - 12:00 PM</p>
+                <p>Wednesday: 6:00 PM - 8:00 PM</p>
+                <p>Friday Prayer: 6:00 PM - 7:00 PM</p>
+            </div>
+              <a href="admin/html/index.html">Sign up/ sign in</a></p>  
+       
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 MPGM Church. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Gallery Filter
+        const filterBtns = document.querySelectorAll('.gallery-filter .filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                // Filter items
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Modal functionality
+        function openModal(src, caption) {
+            const modal = document.querySelector('.gallery-modal');
+            const modalImg = document.getElementById('modal-image');
+            const captionText = document.getElementById('modal-caption');
+            
+            modal.style.display = 'flex';
+            modalImg.src = src;
+            captionText.innerHTML = caption;
+        }
+        
+        // Close modal
+        document.querySelector('.close-modal').addEventListener('click', () => {
+            document.querySelector('.gallery-modal').style.display = 'none';
+        });
+        
+        // Close when clicking outside image
+        window.addEventListener('click', (e) => {
+            if (e.target === document.querySelector('.gallery-modal')) {
+                document.querySelector('.gallery-modal').style.display = 'none';
+            }
+        });
+    </script>
+    <script src="js/gallery.js"></script> 
+</body>
+</html>

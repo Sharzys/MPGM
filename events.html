@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - MPGM Church</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+     <link rel="icon" href="images/LOGO_footer.png" type="image/png">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+             <img src="images/LOGO.png" alt="MPGM Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="events.html" class="nav-link active">Events</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="donate.html" class="nav-link donate-btn">Donate</a></li>
+               
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="events-hero">
+        <div class="container">
+            <h1 class="animate-fadeInDown">Upcoming Events</h1>
+            <p class="animate-fadeInUp delay-1">Join us for worship, fellowship, and community outreach</p>
+        </div>
+    </div>
+
+    <section class="events-main">
+        <div class="container">
+            <div class="events-filter">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="worship">Worship</button>
+                <button class="filter-btn" data-filter="outreach">Outreach</button>
+                <button class="filter-btn" data-filter="youth">Youth</button>
+                <button class="filter-btn" data-filter="conference">Conference</button>
+            </div>
+
+            <div class="events-timeline">
+                <div class="timeline-month">
+                    <h2>July 2025</h2>
+                    <div class="timeline-events">
+                        <div class="timeline-event worship" id="christmas">
+                            <div class="event-date">
+                                <span>05</span>
+                                <small>Jul</small>
+                            </div>
+                            <div class="event-content"> 
+                                <div class="event-badge youth">Youth</div>
+                                <h3>Youth Event</h3>
+                                <div class="event-meta">
+                                    <span><i class="far fa-clock"></i> 9:00 AM </span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Manifesting the power of God Ministries</span>
+                                </div>
+                                <p>Join us for a special Christmas celebration service with carols, scripture readings, and a message of hope. Bring the whole family for this joyful occasion!</p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn-rsvp">RSVP Now</a>
+                                    <a href="#" class="btn-calendar"><i class="far fa-calendar-alt"></i> Add to Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event worship" id="newyear">
+                            <div class="event-date">
+                                <span>31</span>
+                                <small>Dec</small>
+                            </div>
+                            <div class="event-content">
+                                <div class="event-badge worship">Worship</div>
+                                <h3>New Year's Eve Service</h3>
+                                <div class="event-meta">
+                                    <span><i class="far fa-clock"></i> 10:00 PM - 1:00 AM</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> MPGM Church, Nellmapius</span>
+                                </div>
+                                <p>Ring in the New Year with prayer, worship, and thanksgiving. We'll have a time of reflection on the past year and prayer for the year ahead.</p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn-rsvp">RSVP Now</a>
+                                    <a href="#" class="btn-calendar"><i class="far fa-calendar-alt"></i> Add to Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-month">
+                    <h2>January 2025</h2>
+                    <div class="timeline-events">
+                        <div class="timeline-event outreach" id="outreach">
+                            <div class="event-date">
+                                <span>15</span>
+                                <small>Jan</small>
+                            </div>
+                            <div class="event-content">
+                                <div class="event-badge outreach">Outreach</div>
+                                <h3>Community Outreach Program</h3>
+                                <div class="event-meta">
+                                    <span><i class="far fa-clock"></i> 8:00 AM - 4:00 PM</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Nellmapius Community Center</span>
+                                </div>
+                                <p>Our monthly community outreach program where we provide food parcels, school supplies, and spiritual support to families in need. Volunteers welcome!</p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn-rsvp">RSVP Now</a>
+                                    <a href="#" class="btn-calendar"><i class="far fa-calendar-alt"></i> Add to Calendar</a>
+                                    <a href="#" class="btn-volunteer"><i class="fas fa-hands-helping"></i> Volunteer</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event youth">
+                            <div class="event-date">
+                                <span>20</span>
+                                <small>Jan</small>
+                            </div>
+                            <div class="event-content">
+                                <div class="event-badge youth">Youth</div>
+                                <h3>Youth Camp Retreat</h3>
+                                <div class="event-meta">
+                                    <span><i class="far fa-clock"></i> All Day</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Hartbeespoort Dam</span>
+                                </div>
+                                <p>A weekend retreat for our youth members with worship, Bible studies, team-building activities, and fun games. Open to ages 13-25.</p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn-rsvp">RSVP Now</a>
+                                    <a href="#" class="btn-calendar"><i class="far fa-calendar-alt"></i> Add to Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-month">
+                    <h2>February 2025</h2>
+                    <div class="timeline-events">
+                        <div class="timeline-event conference">
+                            <div class="event-date">
+                                <span>10</span>
+                                <small>Feb</small>
+                            </div>
+                            <div class="event-content">
+                                <div class="event-badge conference">Conference</div>
+                                <h3>Annual Leadership Conference</h3>
+                                <div class="event-meta">
+                                    <span><i class="far fa-clock"></i> 8:00 AM - 5:00 PM (Daily)</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> MPGM Church, Nellmapius</span>
+                                </div>
+                                <p>A 3-day conference for church leaders and aspiring leaders with workshops on pastoral care, church administration, and spiritual growth.</p>
+                                <div class="event-actions">
+                                    <a href="#" class="btn-rsvp">RSVP Now</a>
+                                    <a href="#" class="btn-calendar"><i class="far fa-calendar-alt"></i> Add to Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="weekly-schedule">
+        <div class="container">
+            <h2 class="section-title">Weekly Schedule</h2>
+            <div class="schedule-cards">
+                <div class="schedule-card">
+                    <div class="schedule-day">Sunday</div>
+                    <div class="schedule-content">
+                        <h3>Sunday Service</h3>
+                        <p><i class="far fa-clock"></i> 9:00 AM - 12:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Main Sanctuary</p>
+                    </div>
+                </div>
+
+                <div class="schedule-card">
+                    <div class="schedule-day">Tuesday</div>
+                    <div class="schedule-content">
+                        <h3>Bible Study</h3>
+                        <p><i class="far fa-clock"></i> 6:00 PM - 7:30 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Fellowship Hall</p>
+                    </div>
+                </div>
+
+                <div class="schedule-card">
+                    <div class="schedule-day">Wednesday</div>
+                    <div class="schedule-content">
+                        <h3>Prayer Meeting</h3>
+                        <p><i class="far fa-clock"></i> 6:00 PM - 8:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Prayer Room</p>
+                    </div>
+                </div>
+
+                <div class="schedule-card">
+                    <div class="schedule-day">Friday</div>
+                    <div class="schedule-content">
+                        <h3>Youth Night</h3>
+                        <p><i class="far fa-clock"></i> 6:00 PM - 9:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Youth Center</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <div class="footer-logo">
+                    <img src="images/LOGO_footer.png" alt="MPGM Logo">
+                    <h3>MPGM Church</h3>
+                </div>
+                <p>Manifesting the Power of God Ministries in Nellmapius since 2014. Join us as we serve our community and spread the word of God.</p>
+                <div class="contact">
+                       <span> <a href="tel:+27725905697" style="color: white;">
+    <i class="fas fa-phone"></i> +27 72 590 5697 </a></span>
+
+<span><a href="mailto:mpgminfo@gmail.com" style="color: white;">
+    <i class="fas fa-envelope"></i> mpgminfo@gmail.com </a></span>
+
+<span><a href="https://www.google.com/maps/search/?api=1&query=Manifesting+The+Power+Of+God+Ministries" target="_blank"style="color: white;">
+    <i class="fas fa-map-marker-alt"></i> Nellmapius, Extension 24, Phaphadikota street </a></span>
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100077282955124"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/27725905697"><i class="fab fa-whatsapp"></i></a>
+                   
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <h3>Service Times</h3>
+                <p>Sunday: 9:00 AM - 12:00 PM</p>
+                <p>Wednesday: 6:00 PM - 8:00 PM</p>
+                <p>Friday Prayer: 6:00 PM - 7:00 PM</p>
+            </div>
+              <a href="admin/html/index.html">Sign up/ sign in</a></p>  
+       
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 MPGM Church. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDQuf7Pguje9A3XoIG1H_InDx4nLZWtuYg",
+            authDomain: "mpmg-df88b.firebaseapp.com",
+            projectId: "mpmg-df88b",
+            storageBucket: "mpmg-df88b.firebasestorage.app",
+            messagingSenderId: "908511339384",
+            appId: "1:908511339384:web:7ee14ab4addefd7d889e8d",
+            measurementId: "G-KV57V7SEEJ"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Get a reference to the Firestore service globally
+        // This makes 'db' accessible in events.js without imports
+        const db = firebase.firestore();
+        console.log("Firebase initialized and Firestore DB reference obtained using compat SDK."); // For debugging
+    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/events.js"></script>
+</body>
+</html>
